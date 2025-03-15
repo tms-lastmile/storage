@@ -14,8 +14,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.API_KEY || "my-secret-api-key";
+const PORT = process.env.PORT;
+const API_KEY = process.env.API_KEY;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
