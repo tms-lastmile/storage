@@ -1,14 +1,15 @@
-version: "3"
+version: "3.9"
+
 services:
-  backend:
+  storage_service:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: storage_service
     ports:
       - "8081:8081"
-    environment:
-      - API_KEY=${API_KEY}
     volumes:
       - ./uploads:/app/uploads
     env_file:
       - .env
+    restart: always
